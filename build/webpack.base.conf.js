@@ -44,7 +44,10 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        include: [resolve('src'), resolve('test')]
+        options: {
+          presets: ['es2015']
+        },
+        include: [resolve('src'), resolve('test'),resolve('node_modules/time-formater')]
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
