@@ -3,7 +3,7 @@
 	  	<transition name="form-fade" mode="in-out">
 	  		<section class="form_contianer" v-show="showLogin">
 		  		<div class="manage_tip">
-		  			<p>么么越专属选股系统</p>
+		  			<p>管理系统</p>
 		  		</div>
 		    	<el-form :model="loginForm" :rules="rules" ref="loginForm">
 					<el-form-item prop="username">
@@ -60,7 +60,7 @@
 			async submitForm(formName) {
 				this.$refs[formName].validate(async (valid) => {
 					if (valid) {
-						const res = await login({user_name: this.loginForm.username, password: this.loginForm.password})
+						const res = await login({userName: this.loginForm.username, password: this.loginForm.password})
 						if (res.status == 1) {
 							this.$message({
 		                        type: 'success',
